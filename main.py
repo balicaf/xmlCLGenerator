@@ -44,7 +44,7 @@ def main():
 	for elem in zip(ls_elem, ls_cells): 
 		elem[0].text = extract_datum(ws[elem[1]].value)
 	tree = ET.ElementTree(IVClist)
-	tree.write(SW_version.text+".xml")
+	tree.write(ws['C2'].value+".xml")
 
 
 if __name__ == "__main__": 

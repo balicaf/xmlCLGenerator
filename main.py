@@ -1,6 +1,9 @@
-import xml.etree.cElementTree as ET
+#import xml.etree.cElementTree as ET
+from lxml import etree as ET
+
 from openpyxl import Workbook
 import openpyxl
+from pathlib import Path
 
 count = lambda ch : sum(el.isdigit() for el in ch) 
 find_version = lambda ch : ch[ch.find('.')-2:ch.find('.')+9]
@@ -44,7 +47,7 @@ def main():
 	for elem in zip(ls_elem, ls_cells): 
 		elem[0].text = extract_datum(ws[elem[1]].value)
 	tree = ET.ElementTree(IVClist)
-	tree.write(ws['C2'].value+".xml")
+	tree.write(ws['C2'].value+".xml", pretty_print=True)
 
 
 if __name__ == "__main__": 

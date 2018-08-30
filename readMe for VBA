@@ -1,0 +1,10 @@
+on Excel
+alt + f11 
+right clic on modules
+insertion -> modules
+quit the window
+
+on Excel
+add a button
+right clic on it
+"affecter une macro" -> xmlGenerate
